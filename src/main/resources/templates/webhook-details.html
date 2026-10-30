@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HookFlow | Webhook Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            color: #202938;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px #0000000a;
+        }
+
+        .detail {
+            margin: 18px 0;
+        }
+
+        .label {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        pre {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        a {
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>HookFlow</header>
+
+<main>
+    <h1>Webhook Details</h1>
+
+    <section class="card">
+
+        <div class="detail">
+            <p class="label">Database ID</p>
+            <strong th:text="${event.id}"></strong>
+        </div>
+
+        <div class="detail">
+            <p class="label">Event ID (UUID)</p>
+            <strong th:text="${event.eventId}"></strong>
+        </div>
+
+        <div class="detail">
+            <p class="label">Event Type</p>
+            <strong th:text="${event.eventType}"></strong>
+        </div>
+
+        <div class="detail">
+            <p class="label">Destination URL</p>
+            <strong th:text="${event.destinationUrl}"></strong>
+        </div>
+
+        <div class="detail">
+            <p class="label">Status</p>
+            <strong th:text="${event.status}"></strong>
+        </div>
+
+        <div class="detail">
+            <p class="label">Attempts</p>
+            <strong th:text="${event.attempts}"></strong>
+        </div>
+
+        <div class="detail">
+            <p class="label">Payload</p>
+            <pre th:text="${event.payload}"></pre>
+        </div>
+
+    </section>
+
+    <a href="/">← Back to Dashboard</a>
+</main>
+
+</body>
+</html>
